@@ -80,6 +80,9 @@ public class JobData {
 
             String aValue = row.get(column);
 
+            value = value.toLowerCase();
+            aValue = aValue.toLowerCase();
+
             if (aValue.contains(value)) {
                 jobs.add(row);
             }
