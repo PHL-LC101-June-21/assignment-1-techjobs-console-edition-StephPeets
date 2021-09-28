@@ -29,10 +29,7 @@ public class TechJobs {
 
     // Allow the user to search until they manually quit
     while (true) {
-      String actionChoice = getUserSelection(
-        "View jobs by (type 'x' to quit):",
-        actionChoices
-      );
+      String actionChoice = getUserSelection("View jobs by (type 'x' to quit):", actionChoices);
 
       if (actionChoice == null) {
         break;
@@ -44,9 +41,7 @@ public class TechJobs {
         } else {
           ArrayList<String> results = JobData.findAll(columnChoice);
 
-          System.out.println(
-            "\n*** All " + columnChoices.get(columnChoice) + " Values ***"
-          );
+          System.out.println("\n*** All " + columnChoices.get(columnChoice) + " Values ***");
 
           // Print list of skills, employers, etc
           for (String item : results) {
@@ -71,10 +66,7 @@ public class TechJobs {
   }
 
   // Returns the key of the selected item from the choices Dictionary
-  private static String getUserSelection(
-    String menuHeader,
-    HashMap<String, String> choices
-  ) {
+  private static String getUserSelection(String menuHeader, HashMap<String, String> choices) {
     int choiceIdx = -1;
     Boolean validChoice = false;
     String[] choiceKeys = new String[choices.size()];
@@ -119,18 +111,16 @@ public class TechJobs {
 
   // Print a list of jobs
   private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-    // if (someJobs.size() < 1) {
-    //   System.out.println("No Results");
-    // } else {
+    if (someJobs.size() < 1) {
+      System.out.println("No Results");
+    } else {
       for (HashMap<String, String> hMap : someJobs) {
-          System.out.println("\n*****");
-          for (String key : hMap.keySet()) {
-              System.out.println(key + ": " + hMap.get(key));
-            //   System.out.println("position type: " + hMap.get("position type"));
-            //   System.out.println("name" + hMap.get("name"));
-          }
+        System.out.println("*****");
+        for (String key : hMap.keySet()) {
+          System.out.println(key + ": " + hMap.get(key));
+        }
         System.out.println("*****");
       }
     }
   }
-// }
+}
