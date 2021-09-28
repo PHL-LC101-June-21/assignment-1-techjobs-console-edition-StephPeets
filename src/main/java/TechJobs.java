@@ -112,10 +112,10 @@ public class TechJobs {
   // Print a list of jobs
   private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
     if (someJobs.size() < 1) {
-      System.out.println("No Results");
+      System.out.print("No Results");
     } else {
       for (HashMap<String, String> hMap : someJobs) {
-        System.out.println("*****");
+        System.out.println("\n*****");
         for (String key : hMap.keySet()) {
           System.out.println(key + ": " + hMap.get(key));
         }
